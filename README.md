@@ -2,7 +2,7 @@
 
 1º Atividade criar banco de dados e Classe Model
 
-Equipe Blue Generation-
+Equipe 6 - Blue Generation
 
 Danilo Pires da Silva -
 Felipe Juan Fernandes -
