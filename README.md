@@ -1,8 +1,8 @@
-Projeto integrador - ecommerce
+**Projeto integrador - ecommerce**
 
 1º Atividade criar banco de dados e Classe Model
 
-Equipe -
+Equipe Blue Generation-
 
 Danilo Pires da Silva -
 Felipe Juan Fernandes -
