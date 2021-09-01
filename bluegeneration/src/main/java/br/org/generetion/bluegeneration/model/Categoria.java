@@ -9,11 +9,9 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-
-
 @Entity
 @Table (name = "tb_categoria")
-public class categoria {
+public class Categoria {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +25,7 @@ public class categoria {
 	@Size (min = 5, max = 100, message = "o atribuo classificação deve ter no minimo 5 e no maximo 100 caracteres")
 	private String classificacao;
 	
-	@Pattern (regexp = "^(true|false)$", message = "O atributo ativo deve ser verdadeiro ou falso")
+	@NotNull
 	private Boolean ativo;
 
 	public long getId() {
@@ -61,8 +59,4 @@ public class categoria {
 	public void setAtivo(Boolean ativo) {
 		this.ativo = ativo;
 	}
-	
-	
-
-	
 }
