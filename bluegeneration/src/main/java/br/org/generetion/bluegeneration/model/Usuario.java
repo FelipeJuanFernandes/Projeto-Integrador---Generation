@@ -1,12 +1,18 @@
 package br.org.generetion.bluegeneration.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "tb_usuario")
@@ -27,6 +33,10 @@ public class Usuario {
 	@NotNull(message = "O atributo nome é obrigatório")
 	@Size(min = 6, max = 500, message = "O atributo nome deve ter no mínimo 6 e no máximo 100 caracteres")
 	private String senha;
+	
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("usuario")
+	private List<Produto> produto;
 
 	public long getId() {
 		return id;
@@ -58,5 +68,13 @@ public class Usuario {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	
+	public List<Produto> getProduto() {
+		return produto;
+	}
+
+	public void setProduto(List<Produto> produto) {
+		this.produto = produto;
 	}
 }
