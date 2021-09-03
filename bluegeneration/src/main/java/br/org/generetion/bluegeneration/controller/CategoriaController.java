@@ -39,7 +39,7 @@ public class CategoriaController {
 	}
 	
 	@GetMapping("/tipo/{tipo}")
-	public ResponseEntity<List<Categoria>> getByGenero(@PathVariable String tipo){
+	public ResponseEntity<List<Categoria>> getByTipo(@PathVariable String tipo){
 		return ResponseEntity.ok(categoriaRepository.findAllByTipoContainingIgnoreCase(tipo));
 	}
 	
