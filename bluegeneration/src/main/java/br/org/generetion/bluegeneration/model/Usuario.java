@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -26,17 +27,37 @@ public class Usuario {
 	@Size(min = 3, max = 300, message = "O atributo nome deve ter no mínimo 3 e no máximo 100 caracteres")
 	private String nome;
 	
-	@NotNull(message = "O atributo nome é obrigatório")
-	@Size(min = 3, max = 300, message = "O atributo nome deve ter no mínimo 3 e no máximo 100 caracteres")
+	@NotNull(message = "O atributo Usuário é Obrigatório!")
+	private String usuario;
+	
+	@Email
+	@NotNull(message = "O atributo e-mail é obrigatório")
 	private String email;
 	
-	@NotNull(message = "O atributo nome é obrigatório")
-	@Size(min = 6, max = 500, message = "O atributo nome deve ter no mínimo 6 e no máximo 100 caracteres")
+	@NotNull(message = "A senha é obrigatória")
+	@Size(min = 6, max = 500, message = "O atributo senha deve ter no mínimo 6 e no máximo 100 caracteres")
 	private String senha;
 	
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
 	private List<Produto> produto;
+	
+	public Usuario(long id, String nome,String usuario, String senha) {
+		this.id = id;
+		this.nome = nome;
+		this.usuario = usuario;
+		this.senha = senha;
+	}
+	
+	public Usuario() {}
+	
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
 
 	public long getId() {
 		return id;
@@ -76,5 +97,7 @@ public class Usuario {
 
 	public void setProduto(List<Produto> produto) {
 		this.produto = produto;
+		
+		
 	}
 }
