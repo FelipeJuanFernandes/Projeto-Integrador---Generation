@@ -38,15 +38,19 @@ public class Usuario {
 	@Size(min = 6, max = 500, message = "O atributo senha deve ter no mínimo 6 e no máximo 100 caracteres")
 	private String senha;
 	
+	@NotNull(message = "O atributo Tipo é Obrigatório!")
+	private String tipo;
+	
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
 	private List<Produto> produto;
 	
-	public Usuario(long id, String nome,String usuario, String senha) {
+	public Usuario(long id, String nome,String usuario, String senha, String tipo) {
 		this.id = id;
 		this.nome = nome;
 		this.usuario = usuario;
 		this.senha = senha;
+		this.tipo = tipo;
 	}
 	
 	public Usuario() {}
@@ -98,6 +102,13 @@ public class Usuario {
 	public void setProduto(List<Produto> produto) {
 		this.produto = produto;
 		
-		
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 }
