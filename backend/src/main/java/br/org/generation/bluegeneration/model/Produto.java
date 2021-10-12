@@ -1,5 +1,6 @@
 package br.org.generation.bluegeneration.model;
 
+import java.math.BigDecimal;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,8 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
@@ -22,15 +21,16 @@ public class Produto {
 	private long id;
 	
 	@NotNull(message = "O atributo nome é obrigatório")
-	@Size(min = 3, max = 100, message = "O atributo nome deve ter no mínimo 3 e no máximo 100 caracteres")
 	private String nome;
 	
 	@NotNull(message = "O atributo descricao é obrigatório")
-	@Size(min = 3, max = 100, message = "O atributo descricao deve ter no mínimo 3 e no máximo 100 caracteres")
 	private String descricao;
 	
-	@NotNull
-	private double preco;
+	@NotNull(message = "O atributo foto é obrigatório")
+	private String foto;
+	
+	@NotNull(message = "O atributo preço é obrigatório")
+	private BigDecimal preco;
 	
 	@NotNull
 	private int quantidade;
@@ -66,12 +66,20 @@ public class Produto {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
+	
+	public String getFoto() {
+		return foto;
+	}
 
-	public double getPreco() {
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
+	public BigDecimal getPreco() {
 		return preco;
 	}
 
-	public void setPreco(double preco) {
+	public void setPreco(BigDecimal preco) {
 		this.preco = preco;
 	}
 

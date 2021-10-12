@@ -10,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -23,11 +22,9 @@ public class Categoria {
 	private long id;
 	
 	@NotNull(message = "O atributo tipo é obrigatorio")
-	@Size (min = 5, max = 100, message = "o atribuo tipo deve ter no minimo 5 e no maximo 100 caracteres")
 	private String tipo;
 	
 	@NotNull(message = "O atributo classificação é obrigatorio")
-	@Size (min = 5, max = 100, message = "o atribuo classificação deve ter no minimo 5 e no maximo 100 caracteres")
 	private String classificacao;
 	
 	@NotNull
