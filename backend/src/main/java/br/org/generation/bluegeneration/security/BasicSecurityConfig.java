@@ -38,6 +38,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 		.antMatchers("/usuarios/cadastrar").permitAll()
 		.antMatchers("/usuarios/logar").permitAll()
 		.antMatchers(HttpMethod.OPTIONS).permitAll()
+		.antMatchers(HttpMethod.GET, "/produto").permitAll()
+		.antMatchers(HttpMethod.GET, "/categoria").permitAll()
 		.anyRequest().authenticated()
 		.and().httpBasic()
 		.and().sessionManagement()
