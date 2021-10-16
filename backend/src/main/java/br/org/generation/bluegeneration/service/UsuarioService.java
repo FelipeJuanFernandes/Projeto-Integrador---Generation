@@ -39,6 +39,12 @@ public class UsuarioService {
 		return Optional.of(usuarioRepository.save(usuario));
 	
 	}
+	
+	public Optional<Usuario> buscarUsuarioId(long id){
+
+		return usuarioRepository.findById(id);
+
+	}
 
 	public Optional<Usuario> atualizarUsuario(Usuario usuario) {
 
