@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img height="150" width="500"src="https://i.imgur.com/z5pETSm.png"/><br><br>
+	<img src="https://media.giphy.com/media/5YHAujrqqb31B81o0W/giphy.gif" height="450" width="1000"/>
 </h1>
 
 ---
@@ -203,6 +203,9 @@ Instrutores que nos acompanharam do começo ao fim do projeto.
 
 # 📜 Licença
 
-Copyright :copyright: 2021 [Blue Generation](https://github.com/FelipeJuanFernandes/blue-generation).
+Copyright :copyright: 2021 [Blue Generation - Felipe Fernandes, Gisele Mascarenhas, Priscila Damaceno, Julia Barão, Danilo Pires](https://github.com/FelipeJuanFernandes/blue-generation).
+<br/>
+<br/>
+This project is [MIT](https://github.com/FelipeJuanFernandes/Projeto-Integrador---Generation/blob/main/LICENSE) licensed.
 
 ---
